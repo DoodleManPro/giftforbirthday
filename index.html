@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Light_on_off</title>
+</head>
+<body>
+    <div class="full-thing">
+        <div class="light">
+            <div class="wire"></div>
+            <div class="bulb">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="switch">
+                <div class="btn"></div>
+            </div>
+        </div>
+        <div class="gift">
+            <img id="giftBox" src="images/gift.svg" alt="">
+        </div>
+    
+        <audio src="images/click.mp3" id="audio" autoplay="false"></audio>
+    </div>
+    <div class="roll">
+        <video id="video" src="images/Rick Astley - Never Gonna Give You Up (Official Music Video)_360P.mp4" autoplay loop></video>
+    </div>
+
+    <script>
+        let btn = document.querySelector('.btn');
+        let body = document.querySelector('body');
+        let audio = document.querySelector('#audio');
+        let video = document.querySelector('#video');
+        let bulb = document.querySelector('.bulb');
+        let gift = document.querySelector('.gift');
+        let box = document.querySelector('.full-thing');
+        let roll = document.querySelector('.roll');
+        btn.onclick = function(){
+            body.classList.toggle('on');
+            audio.play();
+        };
+
+        gift.onclick = function(){
+            box.style.opacity = '0';
+            roll.style.opacity = '1';
+            video.play();
+        }
+    </script>
+</body>
+</html>
